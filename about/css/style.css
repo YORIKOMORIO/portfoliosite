@@ -1,0 +1,208 @@
+@charset "utf-8";
+.fade-Trigger {
+  animation-name: zoomInAnime;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes zoomInAnime {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+a.btn_sp {
+  display: none;
+}
+.about {
+  padding: 0 40px;
+}
+@media screen and (max-width: 900px) {
+  /* jugyou */
+  .pc_nav {
+    display: none;
+  }
+  .sp_btn {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    height: 23px;
+    cursor: pointer;
+    z-index: 2;
+    /* 重なり順を指定 */
+  }
+  .sp_btn span {
+    width: 33px;
+    height: 3px;
+    display: block;
+    position: relative;
+    top: 10px;
+    border-radius: 2px;
+    background: #232323;
+    transition: 0.3s; /* transitionは状態が変化するまでに何秒かけるか*/
+    /* ハンバーガーメニューの切り替え時にtransitionを入れることで0.3かけて切り替わる */
+    /* 擬似要素にも同様に追加する */
+  }
+  /* 擬似要素 */
+  .sp_btn span::before,
+  .sp_btn span::after {
+    width: 33px;
+    height: 3px;
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 2px;
+    background: #232323;
+    transition: 0.3s;
+  }
+  .sp_btn span::before {
+    bottom: 10px;
+    /* 三本線の下の線 */
+  }
+  .sp_btn span::after {
+    top: 10px;
+    /* 三本線の上の線　 */
+  }
+  /* ハンバーガーメニュー閉じる */
+  .sp_btn.open span {
+    background: transparent;
+    /* ハンバーガーメニューの真ん中の線を見えなくする */
+  }
+  .sp_btn.open span::before {
+    bottom: 0;
+    /* 先ほどずらした三本線の上下の線を元に戻す */
+    transform: rotate(45deg);
+    /* 回転させるプロパティ。45度回転 */
+  }
+  .sp_btn.open span::after {
+    top: 0;
+    transform: rotate(135deg);
+    /* 下の線も戻してから次は135度回転 */
+  }
+
+  /* ハンバーガーメニュー */
+  .sp_nav {
+    width: 100%; /* 横幅100％ */
+    height: 100vh; /* デバイスの高さ100％を100vhとする*/
+    position: absolute; /*  好きな位置に配置*/
+    top: 0;
+    left: 0; /*  topとleftを０で右上に指定*/
+    background: rgba(0, 0, 0, 0.8);
+    /* rgbaアルファを入れることによって透過さえられる。0.8だから80%薄くしている */
+    z-index: 1;
+    /* レイヤーの重なり順を指定 */
+  }
+  .sp_nav ul {
+    height: 100%; /* 高さ100% */
+    display: flex;
+    flex-direction: column; /* flex-direction=どの方向に並べますか */
+    /* columnにすることによって縦に並ぶ */
+    /* flex-direction: columnにすることによって下のjustifyやalineの上下左右が入れ替わる */
+    justify-content: center; /* 上下を真ん中 */
+    align-items: center; /* 左右を真ん中 */
+  }
+  .sp_nav ul li {
+    padding: 20px 0;
+    color: #232323;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Noto Sans CJK JP;
+    text-align: center;
+  }
+  .lead_body {
+    font-size: 60px;
+  }
+  .about_heading {
+    font-size: 30px;
+  }
+  .lead_foot {
+    font-size: 18px;
+  }
+}
+.fv_wrap {
+  position: relative;
+  top: 100px;
+}
+.fv_text {
+  width: 49.2%;
+  height: 380px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+.text_box {
+  width: 10px;
+  height: 30px;
+  margin-right: 10px;
+  background-color: #232323;
+}
+.text_top {
+  max-width: 1000px;
+  display: flex;
+  margin: 0 auto;
+  padding: 150px 0 50px;
+  font-weight: bold;
+  align-items: flex-end;
+}
+.name_large {
+  font-size: 30px;
+}
+.name_middle {
+  padding-left: 15px;
+  font-size: 17px;
+}
+.text_inner p {
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.text_inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  .fv_wrap {
+    margin-top: 0px;
+  }
+  .text_box {
+    width: 8px;
+    height: 23px;
+  }
+  .text_top {
+    padding-top: 150px;
+  }
+  .name_large {
+    font-size: 20px;
+  }
+  .name_middle {
+    font-size: 12px;
+  }
+  .text_inner p {
+    font-size: 13px;
+    line-height: 1.53;
+  }
+  a.btn_sp {
+    width: 50px;
+    display: block;
+    margin: 60px auto 0px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    background: #232323;
+    color: #f2eee7;
+    transition: 0.3s;
+    border: #232323 solid 2px;
+    font-size: 12px;
+  }
+  a.btn_sp:hover {
+    color: #232323;
+    background: #fffe3e;
+  }
+}

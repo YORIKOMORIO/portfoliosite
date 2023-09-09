@@ -1,0 +1,984 @@
+@charset "utf-8";
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f2eee7;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+.loading::before,
+.loading::after {
+  width: 42.3%;
+  height: 0.3vw;
+  content: "";
+  position: absolute;
+  top: 47%;
+  background-color: #232323;
+  transition: 2.5s ease-in-out; /* 緩急をつける */
+}
+.loading::before {
+  transform: translateX(-100%);
+}
+.loading::after {
+  transform: translateX(100%);
+}
+.loading.is-active::before {
+  left: 0;
+  transform: translateX(0%);
+}
+
+.loading.is-active::after {
+  right: 0;
+  transform: translateX(0%);
+}
+.fv_top {
+  width: 20%;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  top: 38%;
+  align-items: flex-end;
+  left: 20%;
+}
+.fv_bottom {
+  width: 20%;
+  display: flex;
+  position: absolute;
+  top: 48%;
+  align-items: flex-end;
+  left: 60%;
+}
+
+.fv_letter {
+  opacity: 0;
+  transition: 1s;
+}
+.fv_letter.is-show {
+  opacity: 1;
+}
+.loading_m {
+  width: 8.1%;
+  position: absolute;
+  bottom: 52.7%;
+}
+
+.left {
+  left: 50%;
+  animation-name: mfadeleft;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes mfadeleft {
+  from {
+    opacity: 0;
+    transform: translateX(-200%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-98%);
+  }
+}
+.right {
+  left: 50%;
+  animation-name: mfaderight;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes mfaderight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-2%);
+  }
+}
+/* .fv_3 {
+  width: 52%;
+} */
+.fv_2,
+.fv_3,
+.fv_4,
+.fv_5,
+.fv_7,
+.fv_8,
+.fv_10 {
+  padding-left: 5px;
+}
+.fv_3 {
+  max-width: 26%;
+}
+.fv_8 {
+  max-width: 25%;
+}
+/* フェードイン */
+/* 上から（スクロール） */
+.fade-down {
+  opacity: 0;
+}
+.scroll-in {
+  animation-name: fadeDownAnime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeDownAnime {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 左から（スクロール） */
+.fadeLeft {
+  opacity: 0;
+}
+.scroll-left {
+  animation-name: fadeLeftAnime;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes fadeLeftAnime {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 拡大（スクロール） */
+.fadeTrigger {
+  opacity: 0;
+}
+.fade-in {
+  animation-name: zoomInAnime;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomInAnime {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* 左から（スクロールなし） */
+.fade_left {
+  animation-name: fadeLeftAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+/* 拡大（スクロールなし） */
+.fade-Trigger {
+  animation-name: zoomInAnime;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+/* スクロールをしたら出現する要素にはじめに透過0を指定*/
+
+.work_pc {
+  opacity: 0;
+}
+
+.body {
+  overflow-x: hidden;
+}
+.scroll {
+  display: block;
+  padding-top: 30px;
+  position: relative;
+  text-align: center;
+}
+.scroll img {
+  width: 81px;
+  margin: 0 auto;
+}
+.scroll::before {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  animation: scroll 3s infinite;
+  border: solid #000;
+  border-width: 0 0 2px 2px;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  transform: rotate(-45deg);
+  top: 80%;
+}
+@keyframes scroll {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  100% {
+    transform: rotate(-45deg) translate(-30px, 30px);
+  }
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+/* concept */
+.concept {
+  margin: 0 auto;
+  margin-top: 90px;
+  margin-bottom: 285px;
+}
+.concept p {
+  margin: 0 auto;
+  padding-top: 180px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 18px;
+  line-height: 1.95;
+}
+
+/* works */
+.home-works {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+.home-works_wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.pc_works h2 {
+  width: 95px;
+  padding-right: 20px;
+  position: absolute;
+  left: calc(50% + 520px);
+  background-color: transparent;
+}
+.works_sp_wrap {
+  display: none;
+}
+.works_sp {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .works_pc h2 {
+    left: auto;
+    right: 0%;
+  }
+  .home-works_wrap {
+    width: calc(100% - 51px);
+  }
+}
+
+.home-works_wrap li {
+  width: 45%;
+  margin-bottom: 100px;
+}
+a.btn_pc,
+a.btn_sp {
+  width: 115px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin: 25px 0 100px auto;
+  padding: 13px;
+  font-weight: bold;
+  background: #232323;
+  color: #f2eee7;
+  transition: 0.3s;
+}
+a.btn_pc:hover,
+a.btn_sp:hover {
+  background: #fffe3e;
+  color: #232323;
+}
+a.btn_sp {
+  display: none;
+}
+
+/* skill */
+.skill {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+.skill_wrap {
+  margin-bottom: 275px;
+  padding-top: 100px;
+}
+.skill_pc h2 {
+  width: 85px;
+  position: absolute;
+  margin-top: 100px;
+  left: calc(50% - 576px);
+  background-color: transparent;
+}
+@media screen and (max-width: 1150px) {
+  .skill_pc h2 {
+    left: auto;
+    right: 0%;
+    left: calc(50% - 510px);
+  }
+  .skill_pc h2 {
+    width: 80px;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .skill_pc h2 {
+    left: auto;
+    right: 0%;
+    left: calc(50% - 385px);
+  }
+  .skill {
+    max-width: 672px;
+  }
+}
+.skill_sp {
+  display: none;
+}
+.skill_head {
+  margin-bottom: 90px;
+}
+.skill_head p {
+  font-size: 16px;
+  line-height: 2.25;
+  text-align-last: right;
+}
+.skill_img_right {
+  width: 22%;
+  margin-right: 0;
+  margin-left: auto;
+  display: block;
+}
+.skill_img_center_pc {
+  width: 45%;
+  margin: 0 auto;
+}
+.skill_img_center_sp {
+  display: none;
+}
+.skill_img_left {
+  width: 22%;
+}
+.skill_foot p {
+  margin-top: 50px;
+  font-size: 16px;
+  line-height: 2.25;
+}
+.pc_only {
+  display: none;
+}
+
+/* about */
+.about {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+.about_sp {
+  display: none;
+}
+.about_pc h2 {
+  width: 70px;
+  position: absolute;
+  left: calc(50% + 500px);
+  background-color: transparent;
+}
+@media screen and (max-width: 1190px) {
+  .about_pc h2 {
+    left: auto;
+    right: 0%;
+    left: calc(50% + 380px);
+  }
+  .about_wrap {
+    width: calc(100% - 76px);
+  }
+}
+@media screen and (max-width: 900px) {
+  .about_pc h2 {
+    left: auto;
+    right: 0%;
+    left: calc(50% + 300px);
+  }
+  .about_wrap {
+    width: calc(93% - 76px);
+  }
+}
+.about_wrap {
+  display: flex;
+  justify-content: center;
+}
+.about_wrap p {
+  margin: 100px 0 100px 80px;
+  font-size: 17px;
+  line-height: 2.11;
+  letter-spacing: 0.05em;
+}
+.about_img {
+  width: 40%;
+}
+.about_wrap_inner img {
+  width: 260px;
+  height: 146px;
+  margin-left: 150px;
+}
+a.btn_about {
+  width: 115px;
+  display: block;
+  margin: 110px 0 290px auto;
+  padding: 13px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  background: #232323;
+  color: #f2eee7;
+  transition: 0.3s;
+}
+a.btn_about:hover {
+  color: #232323;
+  background: #fffe3e;
+}
+
+/* contact */
+.contact {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  padding: 0 40px;
+  background-color: #fffe3e;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.contact_pc {
+  width: 46%;
+  max-width: 350px;
+  margin-right: 7.5%;
+  background-color: #fffe3e;
+}
+.contact_wrap p {
+  max-width: 384px;
+  margin-bottom: 35px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.56;
+  background-color: #fffe3e;
+}
+.contact_wrap {
+  max-width: 384px;
+}
+.contact_btn {
+  width: 300px;
+  height: 70px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #232323;
+  font-size: 20px;
+  border-radius: 0px;
+  border: 1.5px solid #232323;
+  transition: 0.3s;
+  box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
+  background-color: #fffe3e;
+}
+.contact_btn:hover {
+  box-shadow: 0 0 #333;
+  color: #232323;
+  background-color: #fffe3e;
+}
+.btn_page {
+  width: 130px;
+  display: block;
+  margin: 0 auto;
+  padding: 12px 0px;
+  text-decoration: none;
+  font-weight: bold;
+  background: #232323;
+  color: #f2eee7;
+  transition: 0.3s;
+}
+button.btn_page:hover {
+  color: #232323;
+  background: #fffe3e;
+}
+
+/* contact */
+.ttl_wrap {
+  max-width: 1000px;
+  height: 100px;
+  display: flex;
+  margin: 150px 0 110px auto;
+  align-items: center;
+  border: solid 4px #232323;
+}
+.ttl_box {
+  width: 20px;
+  height: 100px;
+  background-color: #fffe3e;
+}
+.ttl_wrap img {
+  width: 270px;
+  padding: 0 50px;
+}
+.ttl_wrap p {
+  border-left: 3px solid #232323;
+  font-size: 20px;
+  padding: 23px 0 23px 44px;
+}
+.contact_text p {
+  margin-bottom: 50px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.contact_form {
+  display: block;
+}
+.contact_page {
+  max-width: 650px;
+  margin: 0 auto;
+  padding-bottom: 150px;
+}
+.contact_page input,
+.contact_page textarea {
+  width: 650px;
+  display: block;
+  margin: 0 auto;
+  padding: 15px;
+  border: none;
+  font-size: 20px;
+}
+.contact_page label {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.contact_page input {
+  margin: 10px 0 30px;
+  box-sizing: border-box;
+}
+.contact_page textarea {
+  height: 400px;
+  margin: 10px 0 80px;
+  box-sizing: border-box;
+}
+.contact_page button {
+  text-align: center;
+}
+.form {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media screen and (max-width: 900px) {
+  .pc_nav {
+    display: none;
+  }
+  .sp_btn {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 25px;
+    height: 23px;
+    cursor: pointer;
+    padding-right: 20px;
+    z-index: 2;
+    /* 重なり順を指定 */
+  }
+  .sp_btn span {
+    width: 33px;
+    height: 3px;
+    display: block;
+    position: relative;
+    top: 10px;
+    background: #232323;
+    transition: 0.3s; /* transitionは状態が変化するまでに何秒かけるか*/
+    /* ハンバーガーメニューの切り替え時にtransitionを入れることで0.3かけて切り替わる */
+    /* 擬似要素にも同様に追加する */
+  }
+  /* 擬似要素 */
+  .sp_btn span::before,
+  .sp_btn span::after {
+    width: 33px;
+    height: 3px;
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 2px;
+    background: #232323;
+    transition: 0.3s;
+  }
+  .sp_btn span::before {
+    bottom: 10px;
+    /* 三本線の下の線 */
+  }
+  .sp_btn span::after {
+    top: 10px;
+    /* 三本線の上の線　 */
+  }
+  /* ハンバーガーメニュー閉じる */
+  .sp_btn.open span {
+    background: transparent;
+    /* ハンバーガーメニューの真ん中の線を見えなくする */
+  }
+  .sp_btn.open span::before {
+    bottom: 0;
+    /* 先ほどずらした三本線の上下の線を元に戻す */
+    transform: rotate(45deg);
+    /* 回転させるプロパティ。45度回転 */
+  }
+  .sp_btn.open span::after {
+    top: 0;
+    transform: rotate(135deg);
+    /* 下の線も戻してから次は135度回転 */
+  }
+
+  /* ハンバーガーメニュー */
+  .sp_nav {
+    width: 100%; /* 横幅100％ */
+    height: 100vh; /* デバイスの高さ100％を100vhとする*/
+    position: absolute; /*  好きな位置に配置*/
+    top: 0;
+    left: 0; /*  topとleftを０で右上に指定*/
+    background: rgba(0, 0, 0, 0.8);
+    /* rgbaアルファを入れることによって透過さえられる。0.8だから80%薄くしている */
+    z-index: 1;
+    /* レイヤーの重なり順を指定 */
+  }
+  .sp_nav ul {
+    height: 100%; /* 高さ100% */
+    display: flex;
+    flex-direction: column; /* flex-direction=どの方向に並べますか */
+    /* columnにすることによって縦に並ぶ */
+    /* flex-direction: columnにすることによって下のjustifyやalineの上下左右が入れ替わる */
+    justify-content: center; /* 上下を真ん中 */
+    align-items: center; /* 左右を真ん中 */
+  }
+  .sp_nav ul li {
+    padding: 20px 0;
+    color: #232323;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Noto Sans CJK JP;
+    text-align: center;
+  }
+  .lead_body {
+    font-size: 60px;
+  }
+  .about_heading {
+    font-size: 30px;
+  }
+  .lead_foot {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .fv_top,
+  .fv_bottom {
+    width: 7%;
+    display: block;
+    bottom: 53%;
+  }
+  .fv_top {
+    height: unset;
+    top: unset;
+    left: 62%;
+  }
+  .fv_bottom {
+    left: 31%;
+  }
+  .fv_1,
+  .fv_2,
+  .fv_4,
+  .fv_6,
+  .fv_7,
+  .fv_9 {
+    width: 88%;
+    display: block;
+  }
+  .fv_1,
+  .fv_2,
+  .fv_6,
+  .fv_7 {
+    padding-bottom: 3px;
+  }
+  .fv_3,
+  .fv_8 {
+    max-width: 100%;
+    display: block;
+    padding-bottom: 3px;
+  }
+  .fv_5,
+  .fv_10 {
+    width: 40%;
+    display: block;
+    margin-left: auto;
+  }
+  .fv_2,
+  .fv_3,
+  .fv_4,
+  .fv_5,
+  .fv_7,
+  .fv_8,
+  .fv_10 {
+    padding-left: unset;
+  }
+  .fv {
+    height: 600px;
+  }
+
+  .scroll img {
+    width: 70px;
+  }
+  .concept {
+    margin-bottom: 137px;
+  }
+  /* works */
+  .pc_works {
+    display: none;
+  }
+
+  .works_sp_wrap {
+    display: block;
+  }
+  .works_sp_wrap p {
+    margin-bottom: 50px;
+    font-size: 3vw;
+  }
+  .works_mock {
+    width: 80%;
+    margin: auto;
+  }
+  .works_mock img {
+    margin: 0 auto;
+  }
+  .works_logo {
+    width: 25%;
+    margin: 20px 0 10px;
+  }
+  .works_block {
+    padding-left: 30px;
+  }
+  .works_sp {
+    width: 45%;
+    display: block;
+    margin: 0 auto 30px;
+  }
+  a.btn_sp {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    padding: 8px 0px;
+    font-size: 15px;
+  }
+  a.btn_pc {
+    display: none;
+  }
+  /* concept */
+  .concept p {
+    font-size: 14px;
+    line-height: 1.78;
+  }
+  /* skill */
+  .skill {
+    padding: 0;
+  }
+  .skill_wrap {
+    margin-bottom: 200px;
+    padding: 50px 30px 0;
+  }
+  .skill_head {
+    margin-bottom: 20px;
+  }
+  .skill_head p {
+    font-size: 16px;
+    line-height: 1.81;
+    text-align-last: left;
+  }
+  .skill_pc {
+    display: none;
+  }
+  .skill_sp {
+    width: 144px;
+    display: block;
+    margin: 150px auto 0;
+  }
+  .skill_img_center_sp {
+    width: 200px;
+    height: 242px;
+    display: block;
+    margin: 0 auto;
+    padding-top: inherit;
+  }
+  .skill_img_center_pc {
+    display: none;
+  }
+  .skill_img_right {
+    width: 100px;
+  }
+  .skill_img_left {
+    width: 100px;
+    margin: 100px 0 30px;
+  }
+
+  /* about */
+  .about {
+    padding: 0;
+  }
+  .about_sp {
+    width: 182px;
+    display: block;
+    margin: 200px auto 50px;
+  }
+  .about_pc h2 {
+    display: none;
+  }
+  .about_img {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+  .about_wrap {
+    display: block;
+    margin: 0 auto;
+  }
+  .about_wrap_inner {
+    margin-bottom: 50px;
+  }
+  .about_wrap_inner img {
+    width: 124px;
+    height: 97px;
+    margin: 0 auto;
+    display: block;
+  }
+  .about_wrap p {
+    padding-top: 50px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 2.07;
+  }
+  a.btn_about {
+    width: 100px;
+    margin: 0 auto;
+    padding: 8px 0px;
+    font-size: 15px;
+  }
+  a.btn_pc {
+    padding: 0.5rem 2rem;
+    margin-right: 20px;
+    margin-top: 80px;
+  }
+
+  .contact_wrap,
+  .about_wrap p {
+    margin: 0 auto;
+  }
+  .btn_page {
+    width: 100px;
+    margin-bottom: 100px;
+    padding: 10px 0;
+  }
+
+  .contact {
+    display: block;
+    height: 500px;
+    margin-top: 150px;
+    padding: 0 20px;
+  }
+  .contact_page {
+    margin-bottom: 100px;
+    padding-bottom: 0;
+  }
+  .contact_pc {
+    width: 217px;
+    height: 35px;
+    margin: 0 auto;
+    padding: 120px 0 80px;
+  }
+
+  .contact_btn {
+    width: 200px;
+    height: 46px;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+  .copyright {
+    padding: 45px 0;
+  }
+  .ttl_wrap,
+  .ttl_box {
+    height: 60px;
+    border-width: 2px;
+  }
+  .ttl_box {
+    width: 12px;
+  }
+  .contact_text {
+    font-size: 15px;
+  }
+  .ttl_wrap {
+    margin: 120p 0 40px;
+  }
+  .ttl_wrap p {
+    display: none;
+  }
+  .ttl_wrap img {
+    width: 180px;
+    padding-left: 20px;
+  }
+  .contact_text p {
+    margin-bottom: 40px;
+  }
+  .contact_page label {
+    font-size: 15px;
+  }
+  .contact_page input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  .contact_page textarea {
+    width: 100%;
+    height: 150px;
+  }
+  .contact_wrap p {
+    font-size: 14px;
+  }
+}

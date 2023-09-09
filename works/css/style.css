@@ -1,0 +1,383 @@
+@charset "utf-8";
+.fadeLeft {
+  opacity: 0;
+}
+.scroll-left {
+  animation-name: fadeLeftAnime;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes fadeLeftAnime {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* 拡大（スクロール） */
+.fadeTrigger {
+  opacity: 0;
+}
+.fade-in {
+  animation-name: zoomInAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+/* 拡大（スクロールなし） */
+.fade-Trigger {
+  animation-name: zoomInAnime;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes zoomInAnime {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.frame {
+  padding: 0 20px;
+}
+.ttl {
+  max-width: 1000px;
+  height: 100px;
+  margin: 60px auto 110px;
+  display: flex;
+  align-items: center;
+  border: solid 4px #232323;
+}
+.ttl_wrap,
+.ttl_wrap_w {
+  max-width: 1000px;
+  height: 100px;
+  display: flex;
+  margin: 150px auto 100px;
+  align-items: center;
+  border: solid 4px #232323;
+}
+.ttl_text p {
+  padding: 20px 0 20px 30px;
+  border-left: 4px solid #232323;
+  font-size: 20px;
+}
+.ttl_box {
+  width: 15px;
+  height: 100px;
+  background-color: #fffe3e;
+}
+.ttl_wrap img {
+  max-width: 1000px;
+  width: 218px;
+  padding: 0 50px;
+}
+
+.works {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.works_wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.works_wrap li {
+  width: 30%;
+  height: 300px;
+  margin-bottom: 100px;
+}
+.ttl,
+.ttl_wrap_w img {
+  width: 218px;
+  padding: 0 30px;
+}
+.ttl_sp {
+  display: none;
+}
+.ttl_left {
+  padding-left: 56px;
+  font-size: 16px;
+  font-weight: bold;
+  border-left: 3px solid #232323;
+}
+.ttl_left p,
+.ttl_right p {
+  padding: 5px 6px 5px 6px;
+}
+.ttl_right {
+  margin-left: 30px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.text_wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.wrap_mock {
+  width: 80%;
+  margin: 0 auto;
+}
+.text_wrap h3 {
+  width: 188px;
+  margin: 100px 0 50px;
+  padding-left: 40px;
+}
+.text_box {
+  width: 8px;
+  height: 16px;
+  margin-right: 3px;
+  background-color: #232323;
+}
+.text_top {
+  display: flex;
+  margin-bottom: 6px;
+  padding-left: 40px;
+  font-weight: bold;
+}
+.text_inner p {
+  margin-bottom: 30px;
+  padding: 0 40px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.works_img {
+  margin: 0 auto 100px;
+  padding: 90px 40px 0px 40px;
+}
+.dc_img {
+  width: 100%;
+  display: flex;
+  margin-bottom: 100px;
+  padding-top: 90px;
+  justify-content: space-between;
+}
+.img_pc {
+  width: 80.8%;
+  margin: 0 20px 40px;
+  border: solid #d9d9d8;
+}
+.img_sp {
+  width: 16.1%;
+  margin-right: 40px;
+}
+.img_sp img {
+  border: solid #d9d9d8;
+}
+@media screen and (max-width: 900px) {
+  /* jugyou */
+  .pc_nav {
+    display: none;
+  }
+  .sp_btn {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 25px;
+    height: 23px;
+    cursor: pointer;
+    z-index: 2;
+    /* 重なり順を指定 */
+    margin-right: 20px;
+  }
+  .sp_btn span {
+    width: 33px;
+    height: 3px;
+    display: block;
+    position: relative;
+    top: 10px;
+    border-radius: 2px;
+    background: #232323;
+    transition: 0.3s; /* transitionは状態が変化するまでに何秒かけるか*/
+    /* ハンバーガーメニューの切り替え時にtransitionを入れることで0.3かけて切り替わる */
+    /* 擬似要素にも同様に追加する */
+  }
+  /* 擬似要素 */
+  .sp_btn span::before,
+  .sp_btn span::after {
+    width: 33px;
+    height: 3px;
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 2px;
+    background: #232323;
+    transition: 0.3s;
+  }
+  .sp_btn span::before {
+    bottom: 10px;
+    /* 三本線の下の線 */
+  }
+  .sp_btn span::after {
+    top: 10px;
+    /* 三本線の上の線　 */
+  }
+  /* ハンバーガーメニュー閉じる */
+  .sp_btn.open span {
+    background: transparent;
+    /* ハンバーガーメニューの真ん中の線を見えなくする */
+  }
+  .sp_btn.open span::before {
+    bottom: 0;
+    /* 先ほどずらした三本線の上下の線を元に戻す */
+    transform: rotate(45deg);
+    /* 回転させるプロパティ。45度回転 */
+  }
+  .sp_btn.open span::after {
+    top: 0;
+    transform: rotate(135deg);
+    /* 下の線も戻してから次は135度回転 */
+  }
+
+  /* ハンバーガーメニュー */
+  .sp_nav {
+    width: 100%; /* 横幅100％ */
+    height: 100vh; /* デバイスの高さ100％を100vhとする*/
+    position: absolute; /*  好きな位置に配置*/
+    top: 0;
+    left: 0; /*  topとleftを０で右上に指定*/
+    background: rgba(0, 0, 0, 0.8);
+    /* rgbaアルファを入れることによって透過さえられる。0.8だから80%薄くしている */
+    z-index: 1;
+    /* レイヤーの重なり順を指定 */
+  }
+  .sp_nav ul {
+    height: 100%; /* 高さ100% */
+    display: flex;
+    flex-direction: column; /* flex-direction=どの方向に並べますか */
+    /* columnにすることによって縦に並ぶ */
+    /* flex-direction: columnにすることによって下のjustifyやalineの上下左右が入れ替わる */
+    justify-content: center; /* 上下を真ん中 */
+    align-items: center; /* 左右を真ん中 */
+  }
+  .sp_nav ul li {
+    padding: 20px 0;
+    color: #232323;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Noto Sans CJK JP;
+    text-align: center;
+  }
+  .lead_body {
+    font-size: 60px;
+  }
+  .about_heading {
+    font-size: 30px;
+  }
+  .lead_foot {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .pc_works {
+    display: none;
+  }
+  .frame {
+    margin-top: 130px;
+  }
+  .ttl_wrap,
+  .ttl_wrap_w,
+  .ttl_box {
+    height: 60px;
+    border-width: 2px;
+  }
+  .ttl_box {
+    width: 10px;
+  }
+  .ttl_wrap {
+    max-width: 90%;
+    margin: 30px auto 50px;
+  }
+  .ttl_wrap img {
+    width: 145px;
+    padding: 0 10px;
+  }
+  .text_wrap h3 {
+    width: 130px;
+    margin: 50px 0 30px;
+    padding-left: 60px;
+  }
+  .work_pc {
+    width: 145px;
+  }
+  .works_wrap {
+    display: block;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .ttl_wrap p {
+    padding: 10px 0 10px 10px;
+    font-size: 15px;
+    border-left: 2px solid #232323;
+  }
+  .works_wrap li {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+  }
+  .ttl_wrap_w {
+    margin: 50px 10px 30px 10px;
+  }
+  .ttl_wrap_w p {
+    display: none;
+  }
+  .ttl_wrap_w img {
+    width: 145px;
+    padding-left: 10px;
+  }
+  .ttl_sp {
+    display: flex;
+    margin: 0 auto;
+    margin-left: 60px;
+  }
+  .ttl_left {
+    padding-left: 0px;
+    border: none;
+  }
+  .ttl_sp p {
+    font-size: 13px;
+  }
+  .text_wrap {
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+
+  .text_inner p {
+    font-size: 14px;
+  }
+  .dc_img {
+    display: block;
+  }
+  .img_pc {
+    margin: 0 auto;
+    padding: inherit;
+  }
+  .img_sp {
+    width: 100px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding: inherit;
+  }
+  .works_img {
+    margin: 0px;
+    padding: 0 40px 60px;
+  }
+  .text_top {
+    padding-left: 60px;
+  }
+  .text_inner {
+    padding-left: 20px;
+  }
+}

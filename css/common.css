@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+/* リセットcss */
+html,
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  color: #232323;
+  background: #f2eee7;
+  font-family: "Noto Sans JP";
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+  border: none;
+}
+body {
+  overflow-x: hidden;
+}
+/* リセットcss */
+
+/* header */
+.header {
+  position: fixed; /* ヘッダーを固定する */
+  top: 0; /* 上部から配置の基準位置を決める */
+  left: 0; /* 左から配置の基準位置を決める */
+  width: 100%; /* ヘッダーの横幅を指定する */
+  height: 35px; /* ヘッダーの高さを指定する */
+  padding: 10px; /* ヘッダーの余白を指定する(上下左右) */
+  color: #000000; /* フォントの色を指定する */
+  z-index: 2;
+}
+.header_logo {
+  width: 150px;
+  background-color: transparent;
+}
+.header_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 30px 3%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.pc_nav ul {
+  display: flex;
+  width: 670px;
+  background-color: transparent;
+}
+.pc_nav ul li {
+  margin-right: 35px;
+  background-color: transparent;
+}
+.fv {
+  height: 690px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.sp_nav,
+.sp_btn {
+  display: none;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* copyright */
+.copyright {
+  width: 155px;
+  height: 14px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .copyright {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
