@@ -133,7 +133,7 @@
 .text_wrap h3 {
   width: 188px;
   margin: 100px 0 50px;
-  padding-left: 40px;
+  padding-left: 60px;
   font-size: 35px;
 }
 .text_box {
@@ -180,6 +180,22 @@
 }
 .img_pf_sp {
   width: 16.1%;
+}
+a.btn_works {
+  width: 115px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 auto;
+  padding: 13px;
+  font-weight: bold;
+  background: #232323;
+  color: #f2eee7;
+  transition: 0.3s;
+}
+a.btn_works:hover {
+  background: #fffe3e;
+  color: #232323;
 }
 
 @media screen and (max-width: 900px) {
@@ -387,4 +403,5 @@
 }
 .text_inner {
   padding-left: 20px;
+  margin-bottom: 110px;
 }
